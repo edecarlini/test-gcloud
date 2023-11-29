@@ -1,0 +1,9 @@
+runtime: python39
+service: default
+handlers:
+  - url: /(..(js|css|png|jpg|jpeg|svg|json|ico|txt|map))
+    static_files: dist/\1
+    upload: dist/..(js|css|png|jpg|jpeg|svg|json|ico|txt|map)
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
